@@ -7,9 +7,6 @@ const BlogPost = () => {
 	const { post, fetchPost } = useFetchPost();
   	const [isLoading, setIsLoading] = useState(false);
 
-	console.log('post', post);
-	console.log('id', postId);
-
 	// Fetch the post by its ID
 	useEffect(() => {
 		if (postId && ! post) {
@@ -36,7 +33,7 @@ const BlogPost = () => {
 	}
 
 	return (
-		<div id={`post-${post.id}`} className="post">
+		<div id={`post-${post.id}`} className="post" role="main">
 			{/* Display the featured image */}
 			{post.featured_image && <img src={post.featured_image} alt={post.title?.rendered} className="featured-image" />}
 			<article className="post-content">

@@ -52,7 +52,7 @@ function Navbar({ categories }) {
 	}
 
 	return (
-		<navbar className="nav-container" role="navigation" aria-label="main navigation">
+		<div className="nav-container" role="navigation" aria-label="main navigation">
 			<nav className="header-nav">
 				<div className="logo">
 					<NavLink to="/" ><Logo className="openrent-logo svg-logo" role="Link" /></NavLink>
@@ -76,7 +76,7 @@ function Navbar({ categories }) {
 					renderNavLinks()
 				)}
 			</nav>
-		</navbar>
+		</div>
 	);
 }
 
