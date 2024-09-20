@@ -13,10 +13,10 @@
 
 :root {
 	--header-height: 3.5rem;
-	--body-color: #468cc8;
+	--body-color: #2B5988;
 	--title-color: #000000;
 	--text-color: #000000;
-	--link-color: #468cc8;
+	--link-color: #2B5988;
 	--hover-color: #785972;
 	--border-color: #74b1ce;
 	--border-radius: 1.5rem;
@@ -59,6 +59,7 @@ ul {
 
 a {
 	text-decoration: none;
+	color: var(--link-color);
 }
 
 .btn {
