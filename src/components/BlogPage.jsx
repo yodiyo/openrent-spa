@@ -54,15 +54,18 @@ const BlogPage = ({ categories }) => {
 		<>
 			<div id="blog-index" className="blog-page">
 				<div className="filters">
-					{/* Search input */}
-					<input
-						name="search"
-						className="filter-search-bar"
-						type="text"
-						value={searchTerm}
-						onChange={handleSearchChange}
-						placeholder="Search posts..."
-					/>
+
+					<form role="search">
+						{/* Search input */}
+						<input
+							name="search"
+							className="filter-search-bar"
+							type="text"
+							value={searchTerm}
+							onChange={handleSearchChange}
+							placeholder="Search posts..."
+						/>
+					</form>
 					{/* Filter component */}
 					<Filter categories={categories} />
 				</div>

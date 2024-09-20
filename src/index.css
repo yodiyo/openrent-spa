@@ -104,6 +104,9 @@ a {
 	margin-left: auto;
 	flex: 3;
 }
+.no-posts {
+	flex: 3;
+}
 
 .posts-container a:hover {
 	text-decoration: none;
