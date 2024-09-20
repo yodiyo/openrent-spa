@@ -26,11 +26,12 @@ const Filter = ({ categories }) => {
 	}
 	return (
 		<div className="filter-container">
-			<button onClick={() => handleCategoryClick(null)} className={! selectedCategoryId ? 'active' : ''}>
+			<button onClick={() => handleCategoryClick(null)} aria-label="Select all categories" className={! selectedCategoryId ? 'active' : ''}>
 				All categories
 			</button>
 			{categories?.map((category) => (
 				<button
+					aria-label={`Select category ${decode(category.name)} `}
 					key={category.id}
 					onClick={() => handleCategoryClick(category.id)}
 					className={category.id === parseInt(selectedCategoryId) ? 'active' : ''}

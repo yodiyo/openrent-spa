@@ -26,13 +26,14 @@ function Navbar({ categories }) {
 		return (
 			<ul className={`primary-nav ${listClassName}`}>
 				<li>
-					<NavLink to="/blog" onClick={closeMenuOnMobile}>News and Guides</NavLink>
-					<ul className="sub-menu">
+					<NavLink to="/blog" onClick={closeMenuOnMobile} aria-expanded="false" aria-controls="sub-menu">News and Guides</NavLink>
+					<ul id="sub-menu" className="sub-menu">
 						{categories && categories.map((category) => (
 							<li key={category.id}>
 								<NavLink
 									to={`/blog?category=${category.id}`}
 									onClick={closeMenuOnMobile}
+									role="link"
 								>
 									{decode(category.name)}
 								</NavLink>
@@ -41,23 +42,23 @@ function Navbar({ categories }) {
 					</ul>
 				</li>
 				<li>
-					<NavLink to="/subscribe" onClick={closeMenuOnMobile}>Subscribe</NavLink>
+					<NavLink to="/subscribe" onClick={closeMenuOnMobile} role="link">Subscribe</NavLink>
 				</li>
 				<li className="btn-default">
-					<NavLink to="https://openrent.co.uk" onClick={closeMenuOnMobile}>Visit OpenRent</NavLink>
+					<NavLink to="https://openrent.co.uk" onClick={closeMenuOnMobile}role="link">Visit OpenRent</NavLink>
 				</li>
 			</ul>
 		)
 	}
 
 	return (
-		<header className="nav-container">
+		<navbar className="nav-container" role="navigation" aria-label="main navigation">
 			<nav className="header-nav">
 				<div className="logo">
-					<NavLink to="/" ><Logo className="openrent-logo svg-logo" /></NavLink>
+					<NavLink to="/" ><Logo className="openrent-logo svg-logo" role="Link" /></NavLink>
 				</div>
 				{isMobile && (
-					<div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
+					<div className="nav__toggle" id="nav-toggle" onClick={toggleMenu} role="button">
 						<Menu />
 					</div>
 				)}
@@ -67,7 +68,7 @@ function Navbar({ categories }) {
 						id="nav-menu"
 					>
 						{renderNavLinks()}
-						<div className="nav__close" id="nav-close" onClick={toggleMenu}>
+						<div className="nav__close" id="nav-close" onClick={toggleMenu} role="button">
 							<Close />
 						</div>
 					</div>
@@ -75,7 +76,7 @@ function Navbar({ categories }) {
 					renderNavLinks()
 				)}
 			</nav>
-		</header>
+		</navbar>
 	);
 }
 

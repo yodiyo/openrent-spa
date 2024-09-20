@@ -35,7 +35,7 @@ function Page({ id }) {
 					className=""
 					dangerouslySetInnerHTML={{ __html: page.content.rendered }}
 				/>
-				<Link to="/blog" className="btn btn-primary">Read more</Link>
+				<Link to="/blog" className="btn btn-primary" aria-label="News and guides">News & Guides</Link>
 			</div>
 		</header >
 	)

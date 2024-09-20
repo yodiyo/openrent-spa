@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const BlogCard = ({ id, title, date, summary, featuredImage }) => {
 	return (
-		<Link to={`/post/${id}`} className="blog-post" >
+		<Link to={`/post/${id}`} className="blog-post" aria-label={`Read more about ${title}`}>
 			{/* Featured Image */}
 			{featuredImage && <img src={featuredImage} alt={title} className="featured-image" />}
 			<p className="blog-date">
