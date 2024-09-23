@@ -16,7 +16,7 @@ const BlogList = ({ posts }) => {
 					title={post.title.rendered}
 					date={post.date}
 					summary={post.excerpt.rendered}
-					featuredImage={post.featured_image}
+					featuredImage={post.medium_image}
 					content={post.content.rendered}
 				/>
 			))}
