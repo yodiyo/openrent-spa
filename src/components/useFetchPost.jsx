@@ -7,7 +7,9 @@ const useFetchPost = () => {
 	const checkMedia = async (postData) => {
 		const mediaResponse = await fetch(`https://blog.openrent.co.uk/wp-json/wp/v2/media/${postData.featured_media}`);
 		const mediaData = await mediaResponse.json();
-		return { ...postData, featured_image: mediaData.source_url }; // Add the featured image URL to the post
+		const ImgFeatured = mediaData.source_url;
+		const ImgThumb = mediaData.media_details.sizes.large.source_url; // Lower resolution image for index page, using large img @ 1024px x 509px to still look good on mobile.
+		return { ...postData, featured_image: ImgFeatured, medium_image: ImgThumb }; // Add the featured image URL to the post
 	}
 
 	const fetchPost = async (id) => {
