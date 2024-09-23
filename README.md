@@ -15,7 +15,7 @@ Consideration has been given to the following:
 	* Landing page with full screen image, strong message and call to action button. The content is being pulled in from the OpenRent blog page. The image was selected from Unsplashed and is directly added in the repo, but, in reality, this image would be pulled from the blog page.
 	* Navigation - as a React app, the News submenu links are dynamically generated from the blog site. These same categories also populate the filters.
 	* Index page
-	  * using Flexbox and CSS Grid to output the articles in responsive grid formation with category filters on left to give it a fresh feel.
+	  * using Flexbox and CSS Grid to output the articles in responsive grid formation with category filters on left to give it a fresh feel. On mobile, search and filters are displayed above. Mobile filters could be refined to take up less space, possibly turned into a dropdown.
 	  * buttons highlight if a category has been selected from menu or from filters.
 	  * search - very basic and needs more time to refine so that it doesn't do things like pick up links to other articles. A more intelligent model like ElasticFilters would really help here.
   * Article pages
