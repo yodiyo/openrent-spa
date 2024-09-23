@@ -6,7 +6,7 @@ const BlogCard = ({ id, title, date, summary, featuredImage }) => {
 	return (
 		<Link to={`/post/${id}`} className="blog-post" aria-label={`Read more about ${title}`}>
 			{/* Featured Image */}
-			{featuredImage && <img src={featuredImage} alt={title} className="featured-image" />}
+			{featuredImage && <img src={featuredImage} alt={title} className="featured-image" loading="lazy" />}
 			<p className="blog-date">
 				{new Date(date).toLocaleDateString(
 					"en-US",
