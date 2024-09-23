@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const BlogCard = ({ id, title, date, summary, mediumLargeImage, mediumImage, largeImage }) => {
 	return (
 		<Link to={`/post/${id}`} className="blog-post" aria-label={`Read more about ${title}`}>
-			<img
+			{(mediumLargeImage || mediumImage || largeImage)
+			&& <img
 				src={mediumImage}
 				srcSet={`
 					${mediumImage} 524w,
@@ -21,7 +22,7 @@ const BlogCard = ({ id, title, date, summary, mediumLargeImage, mediumImage, lar
 				alt={title}
 				className="index-image"
 				loading="lazy"
-			/>
+			/>}
 			<p className="blog-date">
 				{new Date(date).toLocaleDateString(
 					"en-US",
