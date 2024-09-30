@@ -29,7 +29,7 @@ Consideration has been given to the following:
   * Caching content and images
   * Currently, I am only fetching 25 articles as we hit security issues otherwise. In reality, we would paginate the data.
 	* This is why some categories display no posts, when posts do exist in that category. But categories display based on the category.count property.
-  * The CSS needs to be modularised, ideally using SASS components, elements, variables ane mixins
+  * The CSS needs to be modularised, ideally using SASS components, elements, variables and mixins.
   * Using one file, I have added some variables for now, but this definitely needs building out.
   * Accessibility - I have done some cursory tests using the Axe Accessibility tool on navigation, filters and colours, but more thorough testing is needed including for screenreaders, contrasts and keyboard functionality.
   * Create a design system, using something like Storybook, to enable complex, durable, and accessible user interfaces across projects.
