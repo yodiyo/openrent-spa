@@ -23,6 +23,7 @@ Consideration has been given to the following:
    * Currently the image fills the screen and the title drops below the fold - this should be adapted so that the title is visible, either over the image or with an image/title split.
    * It would be good to display the article category too, maybe with a breadcrumb, otherwise a label (colour-coded labels for categories would be a nice touch).
    * Links and other elements in the article also need a rethink.
+   * Images - using srcset to make optimise images responsively.
 * TO DOs
   * Add footer with contact details, link to contact form and important links.
   * Optimise images
