@@ -8,9 +8,11 @@ const useFetchPost = () => {
 		const mediaResponse = await fetch(`https://blog.openrent.co.uk/wp-json/wp/v2/media/${postData.featured_media}`);
 		const mediaData = await mediaResponse.json();
 		const ImgFeatured = mediaData.source_url;
-		const ImgLarge = mediaData.media_details.sizes.large.source_url; // Lower resolution image for index page, using large img @ 1024px x 509px to still look good on mobile.
-		const ImgMediumLarge = mediaData.media_details.sizes.medium_large.source_url; // Lower resolution image for index page, using large img @ 768px x 382px to still look good on mobile.
-		const ImgMedium = mediaData.media_details.sizes.medium.source_url; // Lower resolution image for index page, using large img @ 524px x 264px to still look good on mobile.
+		const mediaDetails = mediaData.media_details;
+		const sizes = mediaDetails?.sizes || {};
+		const ImgLarge = sizes.large?.source_url || null; // Lower resolution image for index page, using large img @ 1024px x 509px to still look good on mobile.
+		const ImgMediumLarge = sizes.medium_large?.source_url || null; // Lower resolution image for index page, using large img @ 768px x 382px to still look good on mobile.
+		const ImgMedium = sizes.medium?.source_url || null; // Lower resolution image for index page, using large img @ 524px x 264px to still look good on mobile.
 		return { ...postData, featured_image: ImgFeatured, large_image: ImgLarge, medium_image: ImgMedium, medium_large_image: ImgMediumLarge }; // Add the featured image URL to the post
 	}
 
