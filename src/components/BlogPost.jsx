@@ -35,7 +35,19 @@ const BlogPost = () => {
 	return (
 		<div id={`post-${post.id}`} className="post" role="main">
 			{/* Display the featured image */}
-			{post.featured_image && <img src={post.featured_image} alt={post.title?.rendered} className="featured-image" loading="lazy" />}
+			{(post.featured_image || post.medium_image || post.medium_large_image) &&
+				<img
+					src={post.featured_image}
+					srcSet={`
+						${post.medium_image} 524w,
+						${post.medium_large_image} 768w,
+						${post.large_image} 1024w,
+						${post.featured_image}
+					`}
+					alt={post.title?.rendered}
+					className="featured-image"
+					loading="lazy"
+				/>}
 			<article className="post-content">
 				<h1>{post.title?.rendered}</h1>
 				<div dangerouslySetInnerHTML={{ __html: post.content?.rendered }}></div>
