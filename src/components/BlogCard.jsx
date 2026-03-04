@@ -46,7 +46,7 @@ BlogCard.propTypes = {
 	title: PropTypes.string.isRequired,
 	date: PropTypes.string.isRequired,
 	summary: PropTypes.string.isRequired,
-	mediumLargeImage: PropTypes.string.isRequired,
-	mediumImage: PropTypes.string.isRequired,
-	largeImage: PropTypes.string.isRequired,
+	mediumLargeImage: PropTypes.string,
+	mediumImage: PropTypes.string,
+	largeImage: PropTypes.string,
 }
