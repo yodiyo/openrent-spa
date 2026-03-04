@@ -14,10 +14,10 @@ const BlogCard = ({ id, title, date, summary, mediumLargeImage, mediumImage, lar
 					${largeImage} 1024w
 				`}
 				sizes="
-					100vw
-					(min-width: 583px) 50vw,
+					(min-width: 1024px) 25vw,
 					(min-width: 866px) 33vw,
-					(min-width: 1024px) 25vw
+					(min-width: 583px) 50vw,
+					100vw
 				"
 				alt={title}
 				className="index-image"
