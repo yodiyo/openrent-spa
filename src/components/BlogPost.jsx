@@ -42,8 +42,9 @@ const BlogPost = () => {
 						${post.medium_image} 524w,
 						${post.medium_large_image} 768w,
 						${post.large_image} 1024w,
-						${post.featured_image}
+						${post.featured_image} 2000w
 					`}
+					sizes="100vw"
 					alt={post.title?.rendered}
 					className="featured-image"
 					loading="lazy"
